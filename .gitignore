@@ -1,0 +1,12 @@
+# Private learning notes (never commit)
+LEARNING_LOG.md
+
+# Secrets
+.env
+
+# Python
+.venv/
+__pycache__/
+
+# macOS
+.DS_Store
