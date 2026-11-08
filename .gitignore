@@ -3,10 +3,14 @@ LEARNING_LOG.md
 
 # Secrets
 .env
+.env.*
+!.env.example
+*.pem
 
 # Python
 .venv/
 __pycache__/
+.pytest_cache/
 
 # macOS
 .DS_Store
