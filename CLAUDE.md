@@ -59,6 +59,8 @@ These rules override any looser guidance elsewhere in this file.
 - **Simple over clever.** Prefer simple, readable code, and explain any library choice.
 - **Learning log.** After each build step, append quick-check Q&A to `LEARNING_LOG.md`. This file is private and gitignored, so never commit it. Record my answers verbatim, with corrections.
 - **Edits to this file.** Propose changes to `CLAUDE.md` and wait for my approval before applying them.
+- **Graded answer checks.** When checking my answers or predictions, start with "Correct:", "Partly correct:", or "Incorrect:", then give the right answer. Never mark a wrong answer as fine.
+- **Session start check.** At the start of each session, ask me to run `! pwd` and `! git status`. If `pwd` is not the project root, or the branch is not the one we're working on, stop and tell me before doing anything else. If you don't know the expected branch, ask.
 
 ## Environment
 
