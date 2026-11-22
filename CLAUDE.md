@@ -15,17 +15,21 @@ Multi-tenancy is a core theme. Every table, file, and model carries a tenant ide
 The repo is new. The layout below is the **intended** structure; build it up as you go and propose updates to this file whenever reality changes.
 
 ```
+src/legacy_to_lakehouse/   # the one installable Python package (uv, src layout)
+  ingestion/       # Python ingestion (files/DB -> bronze)
+  ai_ops/          # RCA assistant: log parsing, prompt, CLI
+  data_gen/        # synthetic data generators (single source of fake data)
+tests/             # pytest tests for the package
 legacy/            # Postgres DDL, PL/pgSQL load procs, extract-file generators
   sql/
   extracts/        # generated sample files (small samples committed; bulk output gitignored)
-ingestion/         # Python ingestion (files/DB -> bronze)
 orchestration/     # Airflow DAGs, docker-compose for local Airflow
 transform/         # dbt project (staging -> intermediate -> marts) + tests
 lakehouse/         # Delta Lake / Databricks notebooks, jobs, configs
-ai_ops/            # RCA assistant: log parsing, prompt, CLI
-data_gen/          # synthetic data generators (single source of fake data)
 docs/              # architecture notes, ADRs, migration write-up
 ```
+
+Python code lives under `src/legacy_to_lakehouse/` and is imported as `legacy_to_lakehouse.<subpackage>`; the other top-level folders hold non-Python assets (SQL, dbt, DAGs, notebooks).
 
 ## Hard rules
 
