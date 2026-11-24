@@ -1,0 +1,7 @@
+tenant_id,account_id,balance
+acme,ACC-0001,1250.00
+acme,ACC-0002,-75.50
+acme,ACC-0003,0.00
+globex,ACC-0101,9800.25
+globex,ACC-0102,N/A
+globex,ACC-0103,310.10
