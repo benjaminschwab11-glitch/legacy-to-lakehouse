@@ -49,3 +49,16 @@ def test_generator_single_pass(sample_path):
     # Assert
     assert len(first_pass) == 5
     assert second_pass == []
+
+
+def test_header_only_extract_returns_empty(tmp_path):
+    # Arrange
+    path = tmp_path / "accounts_header_only.csv"
+    path.write_text("tenant_id,account_id,balance\n")
+    rows = iter_rows(path)
+
+    # Act
+    counts = count_by_tenant(rows)
+
+    # Assert
+    assert counts == {}
